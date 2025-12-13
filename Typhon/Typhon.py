@@ -144,6 +144,8 @@ def bypassMAIN(
         "ctypes",
         "profile",
         "timeit",
+        "_aix_support",
+        "_osx_support"
     ]
     log_level_ = log_level.upper()
     if log_level_ not in ["DEBUG", "INFO", "QUIET"]:

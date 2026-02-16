@@ -159,10 +159,12 @@ USAGE 用户指南
         
     .. note::
 
-        由于文件读取需要关心回显问题（与 RCE 问题不同）， ``Typhon`` 将需要手机沙箱的 RCE 函数以做 payload 的调整。
+        由于文件读取需要关心回显问题（与 RCE 问题不同）， ``Typhon`` 将需要沙箱的 RCE 函数以做 payload 的调整。
         我们默认：
             - "exec" 模式：我们关心回显问题
             - "eval" 模式：我们不关心回显问题
+
+        实战详见 `Typhon-Sample Pyjail 2 <https://typhon.lamentxu.top/zh-cn/latest/EXAMPLE.html#typhon-sample-pyjail-2>`_
     
     .. py:attribute:: is_allow_exception_leak
 

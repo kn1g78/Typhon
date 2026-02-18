@@ -149,6 +149,16 @@ def bypassMAIN(
         "_aix_support",
         "_osx_support",
     ]
+    
+    if interactive:
+        useful_modules.extend(
+            [
+                'code',
+                'doctest',
+                'pdb'
+            ]
+        )
+    
     log_level_ = log_level.upper()
     if log_level_ not in ["DEBUG", "INFO", "QUIET"]:
         logger.warning("[!] Invalid log level, using INFO instead.")

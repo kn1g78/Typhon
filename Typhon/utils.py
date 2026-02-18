@@ -353,15 +353,21 @@ def filter_path_list(path_list: list, tagged_scope: dict) -> List[list]:
             # TODO: check if module is already imported, if not, check if we can import modules
         elif need in dir(builtins):  # need is a builtin
             need_obj = __builtins__[need]
+            output = []
             for i in tagged_scope:
                 if tagged_scope[i][0] == need_obj:
-                    return [path.replace(need, i), tags]
-                if tagged_scope[i][1] == "BUILTINS_SET":
-                    tags[need] = i + f"['{need}']"
-                    return [path, tags]
-                if tagged_scope[i][1] == "MODULE_BUILTINS":
-                    tags[need] = i + f".{need}"
-                    return [path, tags]
+                    output.append(i)
+            if output:
+                output.sort(key=len)
+                return [path.replace(need, output[0]), tags]
+            else:
+                for i in tagged_scope:
+                    if tagged_scope[i][1] == "BUILTINS_SET":
+                        tags[need] = i + f"['{need}']"
+                        return [path, tags]
+                    if tagged_scope[i][1] == "MODULE_BUILTINS":
+                        tags[need] = i + f".{need}"
+                        return [path, tags]
         elif is_tag(need):  # need is a tag
             for i in tagged_scope:
                 if tagged_scope[i][1] == need:

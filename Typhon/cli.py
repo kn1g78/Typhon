@@ -16,5 +16,4 @@ def webui():
     app.run(host="0.0.0.0", port=6240, debug=False, threaded=True)
 
 if __name__ == "__main__":
-
     cli()

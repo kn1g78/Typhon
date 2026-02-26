@@ -12,13 +12,7 @@ WEBUI 网页界面
 
    typhonbreaker webui
 
-也可以使用模块方式启动（等价）：
-
-.. code-block:: bash
-
-   python -m Typhon.cli webui
-
-默认监听 ``0.0.0.0:6240``，浏览器打开： ``http://127.0.0.1:6240`` 。
+默认监听 ``127.0.0.1:6240``，浏览器打开： ``http://127.0.0.1:6240`` 。
 
 参数
 ----
@@ -27,11 +21,11 @@ WEBUI 网页界面
 
 .. code-block:: bash
 
-   typhonbreaker webui --host 127.0.0.1 --port 6240
+   typhonbreaker webui --host 0.0.0.0 --port 6240
 
 .. warning::
 
-   WebUI 默认绑定到 ``0.0.0.0``。如果你运行在服务器上，请自行做好访问控制/防火墙配置。
+   WebUI 默认绑定到 ``127.0.0.1``。如果你运行在服务器上，请自行做好访问控制/防火墙配置。
 
 Docker
 ------

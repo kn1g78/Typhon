@@ -21,6 +21,7 @@ search_depth = 5  # changeable in bypassMAIN()
 logging.basicConfig(level=log_level_, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
+# get current global scope
 current_frame = currentframe()
 try:
     while current_frame.f_globals["__name__"] != "__main__":
@@ -39,7 +40,7 @@ from .utils import *
 # The RCE data including RCE functions and their parameters.
 from .RCE_data import *
 
-VERSION = "1.0.12.5"
+VERSION = "1.0.12.6"
 BANNER = (
     r"""
     .-')          _                 Typhon: a pyjail bypassing tool
